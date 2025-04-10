@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Courses - TutorWorld{% endblock %}
+
+{% block content %}
+<div class="container courses-container">
+    <h1 class="mb-4">Available Courses</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="course-card">
+                <span class="course-category">Programming</span>
+                <h3 class="course-title">Python Fundamentals</h3>
+                <p class="course-difficulty">Beginner Level</p>
+                <p>Learn the basics of Python programming language with hands-on exercises and projects.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <a href="#" class="btn btn-enroll">Enroll Now</a>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="course-card">
+                <span class="course-category">Web Development</span>
+                <h3 class="course-title">HTML & CSS Mastery</h3>
+                <p class="course-difficulty">Beginner Level</p>
+                <p>Build beautiful, responsive websites using modern HTML and CSS techniques.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <a href="#" class="btn btn-enroll">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="course-card">
+                <span class="course-category">Mathematics</span>
+                <h3 class="course-title">Calculus I</h3>
+                <p class="course-difficulty">Intermediate Level</p>
+                <p>Master the fundamentals of differential and integral calculus with practical applications.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <a href="#" class="btn btn-enroll">Enroll Now</a>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="course-card">
+                <span class="course-category">Data Science</span>
+                <h3 class="course-title">Introduction to Machine Learning</h3>
+                <p class="course-difficulty">Advanced Level</p>
+                <p>Learn the core concepts of machine learning and build your first predictive models.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <a href="#" class="btn btn-enroll">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .courses-container {
+        padding: 2rem;
+    }
+
+    .course-card {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .course-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .course-title {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+    }
+
+    .course-category {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--button-text);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .course-difficulty {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .progress {
+        height: 10px;
+        margin: 1rem 0;
+    }
+
+    .btn-enroll {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+        border: none;
+    }
+
+    .btn-enroll:hover {
+        opacity: 0.9;
+    }
+</style>
+{% endblock %}

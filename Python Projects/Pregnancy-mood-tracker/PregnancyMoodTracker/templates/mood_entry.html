@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Log a Mood Entry</h2>
+    <form method="POST" action="/mood_entry">
+        <div class="mb-3">
+            <label for="mood" class="form-label">Mood</label>
+            <input type="text" class="form-control" name="mood" required>
+        </div>
+        <div class="mb-3">
+            <label for="note" class="form-label">Note</label>
+            <textarea class="form-control" name="note"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorWorld - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-color: #222222;
+            --primary-color: #555555;
+            --secondary-color: #EEEEEE;
+            --accent-color: #8c2539;
+            --card-bg: #FFFFFF;
+            --nav-bg: #FFFFFF;
+            --button-bg: #8c2539;
+            --button-text: #FFFFFF;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e9ecef;
+            --primary-color: #bb86fc;
+            --secondary-color: #1e1e1e;
+            --accent-color: #834ffe;
+            --card-bg: #1e1e1e;
+            --nav-bg: #1e1e1e;
+            --button-bg: #bb86fc;
+            --button-text: #000000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            position: fixed;
+            width: 250px;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .profile-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--accent-color);
+            color: var(--button-text);
+        }
+
+        .stats-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .course-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress {
+            height: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-card">
+            <img src="../assets/ai-assistant.png" alt="Profile" class="profile-img">
+            <h5>Welcome, <span id="username">User</span></h5>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><i class="bi bi-house"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-book"></i> My Courses</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-bar-chart"></i> Progress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="bi bi-gear"></i> Settings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <h5>Enrolled Courses</h5>
+                    <h2>5</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <h5>Completed Lessons</h5>
+                    <h2>23</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card">
+                    <h5>Learning Streak</h5>
+                    <h2>7 days</h2>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mt-4">Continue Learning</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h5>Python Fundamentals</h5>
+                    <p>Lesson 5: Functions and Modules</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="course-card">
+                    <h5>Web Development</h5>
+                    <p>Lesson 3: CSS Styling</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mt-4">Recommended Courses</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="course-card">
+                    <h5>JavaScript Advanced</h5>
+                    <p>Master modern JS concepts</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="course-card">
+                    <h5>Data Structures</h5>
+                    <p>Algorithms and complexity</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="course-card">
+                    <h5>React Framework</h5>
+                    <p>Build modern web apps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"></script>
+    <script>
+        // Fetch and display username
+        fetch('/get-user')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('username').textContent = data.username;
+            });
+    </script>
+</body>
+</html>

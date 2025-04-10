@@ -1,0 +1,15 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "admin@tutorworld.com",
+            "password": "hashed_password_here",
+            "name": "Admin User",
+            "phone": "+1234567890",
+            "verified": true,
+            "role": "admin",
+            "createdAt": "2024-02-28T00:00:00Z"
+        }
+    ],
+    "sessions": []
+}

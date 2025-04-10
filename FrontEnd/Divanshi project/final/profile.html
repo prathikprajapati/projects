@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | TutorWorld</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+        <div class="row">
+            <!-- Left Column - Profile Info -->
+            <div class="col-md-4">
+                <div class="card profile-card mb-4">
+                    <div class="card-body text-center">
+                        <div class="avatar-container mb-3">
+                            <img src="assets/default-avatar.jpg" id="profile-avatar" class="rounded-circle" width="150" height="150">
+                            <button class="btn btn-sm btn-outline-primary avatar-edit" data-bs-toggle="modal" data-bs-target="#avatarModal">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h3 id="profile-name">John Doe</h3>
+                        <p class="text-muted" id="profile-email">john@example.com</p>
+                        <p id="profile-bio">Passionate learner exploring new skills</p>
+                        
+                        <div class="d-grid gap-2 mb-4">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                <i class="fas fa-edit me-2"></i>Edit Profile
+                            </button>
+                        </div>
+
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fas fa-cog me-2"></i>Settings
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                                <i class="fas fa-key me-2"></i>Change Password
+                            </a>
+                            <a href="login.html" class="list-group-item list-group-item-action text-danger">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            </a>
+                            <div class="list-group-item">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                                    <label class="form-check-label" for="darkModeToggle">
+                                        <i class="fas fa-moon me-2"></i>Dark Mode
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Weekly Goals</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress mb-3">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 65%">65%</div>
+                        </div>
+                        <p>5 of 8 hours completed this week</p>
+                        <button class="btn btn-sm btn-outline-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Main Content -->
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">My Courses</h5>
+                        <button class="btn btn-sm btn-light">
+                            <i class="fas fa-plus me-1"></i>Browse Courses
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Course 1 -->
+                        <div class="course-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <h6>Introduction to JavaScript</h6>
+                                <span class="badge bg-success">Active</span>
+                            </div>
+                            <div class="progress mb-2" style="height: 10px;">
+                                <div class="progress-bar" role="progressbar" style="width: 45%"></div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small>45% Complete</small>
+                                <button class="btn btn-sm btn-primary">Resume</button>
+                            </div>
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class="course-item mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <h6>Advanced CSS Techniques</h6>
+                                <span class="badge bg-warning text-dark">Paused</span>
+                            </div>
+                            <div class="progress mb-2" style="height: 10px;">
+                                <div class="progress-bar" role="progressbar" style="width: 78%"></div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <small>78% Complete</small>
+                                <button class="btn btn-sm btn-primary">Resume</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Achievements</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4 text-center">
+                                <div class="achievement-badge">
+                                    <i class="fas fa-medal fa-2x text-warning"></i>
+                                    <p class="mt-2 mb-0">Fast Learner</p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="achievement-badge">
+                                    <i class="fas fa-trophy fa-2x text-info"></i>
+                                    <p class="mt-2 mb-0">Quiz Master</p>
+                                </div>
+                            </div>
+                            <div class="col-4 text-center">
+                                <div class="achievement-badge">
+                                    <i class="fas fa-star fa-2x text-success"></i>
+                                    <p class="mt-2 mb-0">5-Day Streak</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Community Leaderboard</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-primary me-2">1</span>
+                                    <strong>Sarah Johnson</strong>
+                                </div>
+                                <span class="badge bg-success">1250 XP</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-secondary me-2">2</span>
+                                    <strong>You</strong>
+                                </div>
+                                <span class="badge bg-success">980 XP</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-warning text-dark me-2">3</span>
+                                    <strong>Mike Chen</strong>
+                                </div>
+                                <span class="badge bg-success">875 XP</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="profileForm">
+                        <div class="mb-3">
+                            <label for="nameInput" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="nameInput" value="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bioInput" class="form-label">Bio</label>
+                            <textarea class="form-control" id="bioInput" rows="3">Passionate learner exploring new skills</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveProfileBtn">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="passwordForm">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="changePasswordBtn">Change Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar Upload Modal -->
+    <div class="modal fade" id="avatarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Profile Picture</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-3">
+                        <img src="assets/default-avatar.jpg" id="avatarPreview" class="rounded-circle" width="200" height="200">
+                    </div>
+                    <div class="mb-3">
+                        <label for="avatarUpload" class="form-label">Upload new image</label>
+                        <input class="form-control" type="file" id="avatarUpload" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveAvatarBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/profile.js"></script>
+    <script>
+        // Load navbar
+        fetch('components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

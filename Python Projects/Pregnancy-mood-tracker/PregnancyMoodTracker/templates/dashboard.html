@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Your Mood Dashboard</h2>
+    <p>Welcome, {{ current_user.username }}!</p>
+    <a href="{{ url_for('mood_entry') }}" class="btn btn-primary">Log a Mood Entry</a>
+    <canvas id="moodChart"></canvas>
+    <script>
+        const labels = {{ labels | tojson }};
+        const data = {{ data | tojson }};
+        new Chart(document.getElementById('moodChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Mood Over Time',
+                    data: data,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+{% endblock %}

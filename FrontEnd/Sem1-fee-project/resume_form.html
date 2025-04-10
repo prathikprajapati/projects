@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="resume_form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <i class="las la-sun"></i>
+        <label class="theme-switch">
+            <input type="checkbox" id="themeSwitch">
+            <span class="slider"></span>
+        </label>
+        <i class="las la-moon"></i>
+    </div>
+
+    <div class="container">
+        <form id="resumeForm">
+            <!-- Personal Information Section -->
+            <div class="form-section personal-info">
+                <h2><i class="las la-user-circle"></i> Personal Information</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="profile-image-section">
+                    <div class="profile-image-container">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtY2JsZTRiMHE3cTRhMzl4OW9xYnk3Nm5peXZ0NmQ1d2RwbXlpYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3o7520E44QxmxQYUcU/giphy.gif" 
+                             alt="Profile Image Preview" 
+                             id="profileImagePreview" 
+                             class="profile-image placeholder-gif">
+                        <div class="profile-image-overlay">
+                            <i class="las la-camera"></i>
+                            <span>Double click to change photo</span>
+                        </div>
+                        <input type="file" id="profileImage" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="form-section education">
+                <h2><i class="las la-graduation-cap"></i> Education</h2>
+                <div id="educationContainer"></div>
+                <button type="button" class="add-btn" onclick="addEducation()">
+                    <i class="las la-plus"></i> Add Education
+                </button>
+            </div>
+            <!-- Work Experience Section -->
+            <div class="form-section experience">
+                <h2><i class="las la-briefcase"></i> Work Experience</h2>
+                <div id="experienceFields">
+                    <!-- Experience entries will be added here dynamically -->
+                </div>
+                <button type="button" class="add-btn" onclick="addExperienceField()">
+                    <i class="las la-plus"></i> Add Experience
+                </button>
+            </div>
+            <!-- Skills Section -->
+            <div class="form-section skills">
+                <h2><i class="las la-tools"></i> Skills</h2>
+                <div id="skillsContainer"></div>
+                <button type="button" class="add-btn" onclick="addSkill()">
+                    <i class="las la-plus"></i> Add Skill
+                </button>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="form-section projects">
+                <h2><i class="las la-project-diagram"></i> Projects</h2>
+                <div id="projectsContainer"></div>
+                <button type="button" class="add-btn" onclick="addProject()">
+                    <i class="las la-plus"></i> Add Project
+                </button>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="las la-save"></i> Save Resume
+            </button>
+        </form>
+    </div>
+    <!-- Confirmation Modal -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <h2><i class="las la-save"></i> Save Resume</h2>
+        <p>Are you sure you want to save your resume? This will download a JSON file with all your information.</p>
+        <div class="modal-buttons">
+            <button type="button" class="btn btn-secondary" onclick="hideConfirmModal()">Cancel</button>
+            <button type="button" class="btn btn-primary" onclick="confirmAndSubmit()">Save Resume</button>
+        </div>
+    </div>
+</div>
+    <script src="resume_form.js"></script>
+    <script>
+        document.getElementById('resumeForm').addEventListener('submit', function(event) {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const namePattern = /^[A-Za-z\s]+$/;
+
+            if (!namePattern.test(fullName)) {
+                alert('Full Name should only contain letters and spaces.');
+                event.preventDefault();
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

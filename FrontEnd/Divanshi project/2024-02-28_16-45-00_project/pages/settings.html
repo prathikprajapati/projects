@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorWorld - Settings</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../assets/Logo.jpeg" alt="TutorWorld Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html"><i class="fas fa-book me-1"></i> Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1"></i> About</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light me-2 theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i> John Doe
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Settings Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-lg-3 mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4"><i class="fas fa-cog me-2"></i> Settings</h5>
+                            <div class="list-group list-group-flush">
+                                <a href="#account" class="list-group-item list-group-item-action active" data-bs-toggle="tab">
+                                    <i class="fas fa-user-cog me-2"></i> Account
+                                </a>
+                                <a href="#security" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                    <i class="fas fa-shield-alt me-2"></i> Security
+                                </a>
+                                <a href="#notifications" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                    <i class="fas fa-bell me-2"></i> Notifications
+                                </a>
+                                <a href="#appearance" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                    <i class="fas fa-palette me-2"></i> Appearance
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="col-lg-9">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="tab-content">
+                                <!-- Account Tab -->
+                                <div class="tab-pane fade show active" id="account">
+                                    <h4 class="mb-4"><i class="fas fa-user-cog me-2"></i> Account Settings</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label">Language</label>
+                                            <select class="form-select">
+                                                <option value="en">English</option>
+                                                <option value="es">Spanish</option>
+                                                <option value="fr">French</option>
+                                                <option value="de">German</option>
+                                                <option value="ja">Japanese</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Timezone</label>
+                                            <select class="form-select">
+                                                <option value="utc">UTC</option>
+                                                <option value="est">Eastern Time (EST)</option>
+                                                <option value="pst">Pacific Time (PST)</option>
+                                                <option value="cet">Central European Time (CET)</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save me-2"></i> Save Changes
+                                        </button>
+                                    </form>
+                                </div>
+                                
+                                <!-- Security Tab -->
+                                <div class="tab-pane fade" id="security">
+                                    <h4 class="mb-4"><i class="fas fa-shield-alt me-2"></i> Security Settings</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label">Change Password</label>
+                                            <div class="input-group mb-2">
+                                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                <input type="password" class="form-control" placeholder="Current Password">
+                                            </div>
+                                            <div class="input-group mb-2">
+                                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                <input type="password" class="form-control" placeholder="New Password">
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="twoFactorAuth">
+                                                <label class="form-check-label" for="twoFactorAuth">Two-Factor Authentication</label>
+                                            </div>
+                                            <small class="text-muted">Add an extra layer of security to your account</small>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save me-2"></i> Update Security
+                                        </button>
+                                    </form>
+                                </div>
+                                
+                                <!-- Notifications Tab -->
+                                <div class="tab-pane fade" id="notifications">
+                                    <h4 class="mb-4"><i class="fas fa-bell me-2"></i> Notification Preferences</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email Notifications</label>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" id="courseUpdates" checked>
+                                                <label class="form-check-label" for="courseUpdates">Course updates and announcements</label>
+                                            </div>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" id="promotional" checked>
+                                                <label class="form-check-label" for="promotional">Promotional offers</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="newsletter">
+                                                <label class="form-check-label" for="newsletter">Weekly newsletter</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="form-label">Push Notifications</label>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" id="assignmentReminders" checked>
+                                                <label class="form-check-label" for="assignmentReminders">Assignment reminders</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="newMessages">
+                                                <label class="form-check-label" for="newMessages">New messages</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save me-2"></i> Save Preferences
+                                        </button>
+                                    </form>
+                                </div>
+                                
+                                <!-- Appearance Tab -->
+                                <div class="tab-pane fade" id="appearance">
+                                    <h4 class="mb-4"><i class="fas fa-palette me-2"></i> Appearance Settings</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label">Theme</label>
+                                            <div class="d-flex gap-3 mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="theme" id="lightTheme" checked>
+                                                    <label class="form-check-label" for="lightTheme">
+                                                        <i class="fas fa-sun me-2"></i> Light
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="theme" id="darkTheme">
+                                                    <label class="form-check-label" for="darkTheme">
+                                                        <i class="fas fa-moon me-2"></i> Dark
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="theme" id="systemTheme">
+                                                    <label class="form-check-label" for="systemTheme">
+                                                        <i class="fas fa-desktop me-2"></i> System
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="form-label">Font Size</label>
+                                            <select class="form-select">
+                                                <option value="small">Small</option>
+                                                <option value="medium" selected>Medium</option>
+                                                <option value="large">Large</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save me-2"></i> Apply Changes
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <img src="../assets/Logo.jpeg" alt="TutorWorld Logo" height="40" class="mb-3">
+                    <p>Empowering learners worldwide with quality programming education.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-white-50">Home</a></li>
+                        <li class="mb-2"><a href="courses.html" class="text-white-50">Courses</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50">About</a></li>
+                        <li><a href="login.html" class="text-white-50">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Learning St, Education City</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +1 (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@tutorworld.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold mb-4">Newsletter</h5>
+                    <p>Subscribe for course updates and offers.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 TutorWorld. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* Profile Page Styles */
+.profile-card {
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-edit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#profile-email {
+    font-size: 0.9rem;
+}
+
+#profile-bio {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.course-item {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.achievement-badge {
+    padding: 15px 0;
+}
+
+.achievement-badge i {
+    margin-bottom: 5px;
+}
+
+.achievement-badge p {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+}
+
+body.dark-mode .card {
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark-mode .list-group-item {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #f8f9fa;
+}
+
+body.dark-mode .text-muted {
+    color: #aaa !important;
+}
+
+/* Circular progress bars */
+.circular-progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.circular-progress svg {
+    transform: rotate(-90deg);
+}
+
+.circular-progress circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+.circular-progress circle:first-child {
+    stroke: #e6e6e6;
+}
+
+.circular-progress circle:last-child {
+    stroke: #4CAF50;
+    stroke-dasharray: 283;
+    stroke-dashoffset: calc(283 - (283 * var(--progress)) / 100);
+}
+
+.circular-progress .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.2rem;
+}

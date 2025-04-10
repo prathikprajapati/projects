@@ -1,0 +1,4 @@
+Placeholder for asset files. Replace with actual:
+- Logo.jpeg
+- ai-assistant.png
+- background.jpeg
